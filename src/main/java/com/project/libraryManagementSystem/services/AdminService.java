@@ -16,8 +16,10 @@ import java.util.Optional;
  */
 @Service
 public class AdminService {
+
     @Autowired
     AdminRepository adminRepository;
+
 
     /**
      * Method to create new admin details in database.

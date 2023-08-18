@@ -1,7 +1,7 @@
 package com.project.libraryManagementSystem.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -19,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Author {
+public class Author{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

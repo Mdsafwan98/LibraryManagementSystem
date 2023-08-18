@@ -7,7 +7,7 @@ import com.project.libraryManagementSystem.dtos.CreateBookRequest;
 import com.project.libraryManagementSystem.models.Book;
 import com.project.libraryManagementSystem.services.BookService;
 import com.project.libraryManagementSystem.utils.InputValidation;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

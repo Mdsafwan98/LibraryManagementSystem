@@ -5,7 +5,7 @@ import com.project.libraryManagementSystem.dtos.initiatePaymentRequest;
 import com.project.libraryManagementSystem.services.TransactionService;
 import com.project.libraryManagementSystem.utils.InputValidation;
 import com.project.libraryManagementSystem.utils.ValidationException;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

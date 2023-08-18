@@ -1,11 +1,12 @@
 package com.project.libraryManagementSystem.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -37,5 +38,4 @@ public class Student {
     @OneToMany(mappedBy = "student")
     @JsonIgnoreProperties({"student"})
     private List<Transaction> transactionList;
-
 }

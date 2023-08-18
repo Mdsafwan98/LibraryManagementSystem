@@ -3,8 +3,9 @@ package com.project.libraryManagementSystem.dtos;
 import com.project.libraryManagementSystem.models.Author;
 import com.project.libraryManagementSystem.models.Book;
 import com.project.libraryManagementSystem.models.Genre;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import lombok.*;
 
 /**

@@ -1,8 +1,9 @@
 package com.project.libraryManagementSystem.dtos;
 
 import com.project.libraryManagementSystem.models.TransactionType;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * This class is used as a data transfer object for initiating transaction request for Transaction API.

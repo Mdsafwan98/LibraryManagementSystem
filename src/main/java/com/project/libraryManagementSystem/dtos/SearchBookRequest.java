@@ -1,6 +1,6 @@
 package com.project.libraryManagementSystem.dtos;
 
-import jakarta.validation.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 import lombok.*;
 
 /**

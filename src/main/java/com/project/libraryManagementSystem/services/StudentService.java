@@ -57,10 +57,10 @@ public class StudentService {
      *
      * @return
      */
-    public List<Student> getAllStudents() {
+    public List<Student> getAllStudents() throws ValidationException {
         List<Student> students = studentRepository.findAll();
         if (students.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The are no record exist for student details in database.");
+            throw new ValidationException("The are no record exist for student details in database.");
         }
         return students;
     }

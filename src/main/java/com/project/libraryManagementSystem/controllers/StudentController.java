@@ -7,9 +7,10 @@ import com.project.libraryManagementSystem.services.StudentService;
 import com.project.libraryManagementSystem.utils.InputValidation;
 import com.project.libraryManagementSystem.utils.SuccessResponse;
 import com.project.libraryManagementSystem.utils.ValidationException;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,7 @@ import java.util.List;
 public class StudentController {
     @Autowired
     StudentService studentService;
+
     private final InputValidation inputDetails;
 
     public StudentController(InputValidation inputDetails) {
@@ -63,15 +65,17 @@ public class StudentController {
         return studentService.getStudentDetails(id);
     }
 
+
     /**
      * Method to get all student details.
      *
      * @return
      */
     @GetMapping("/students")
-    public List<Student> getAllStudents() {
+    public List<Student> getAllStudents() throws ValidationException {
         return studentService.getAllStudents();
     }
+
 
     /**
      * Method to delete existing student details by Id.
@@ -105,7 +109,7 @@ public class StudentController {
         inputDetails.validateInputDetails(result);
         Student updatedStudent = studentService.updateStudentDetails(request.studentConversion());
         if (updatedStudent != null) {
-           SuccessResponse.StudentResponse student = new SuccessResponse.StudentResponse("Student details updated successfully. ", updatedStudent);
+            SuccessResponse.StudentResponse student = new SuccessResponse.StudentResponse("Student details updated successfully. ", updatedStudent);
             return ResponseEntity.ok(student);
         } else {
             return ResponseEntity.badRequest().body(new SuccessResponse.StudentResponse("Failed to update student.", null));

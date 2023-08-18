@@ -1,8 +1,9 @@
 package com.project.libraryManagementSystem.dtos;
 
 import com.project.libraryManagementSystem.models.Admin;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * This class is used as a data transfer object for Admin API.
@@ -19,11 +20,15 @@ public class CreateAdminRequest {
     private String adminName;
     @NotBlank(message = "Email name is mandatory.")
     private String adminEmail;
+   /* @NotBlank(message = "Username  is mandatory.")
+    private String username;
+    @NotBlank(message = "Password is mandatory.")
+    private String password;*/
 
     public Admin to() {
         return Admin.builder()
                 .name(this.adminName)
-                .email(this.adminEmail).
-                build();
+                .email(this.adminEmail)
+                .build();
     }
 }

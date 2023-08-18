@@ -1,7 +1,7 @@
 package com.project.libraryManagementSystem.dtos;
 
 import com.project.libraryManagementSystem.models.Student;
-import jakarta.validation.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 import lombok.*;
 
 /**
