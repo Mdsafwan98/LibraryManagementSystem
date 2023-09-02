@@ -20,10 +20,6 @@ public class CreateAdminRequest {
     private String adminName;
     @NotBlank(message = "Email name is mandatory.")
     private String adminEmail;
-   /* @NotBlank(message = "Username  is mandatory.")
-    private String username;
-    @NotBlank(message = "Password is mandatory.")
-    private String password;*/
 
     public Admin to() {
         return Admin.builder()

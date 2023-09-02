@@ -17,8 +17,6 @@ import java.util.Optional;
  */
 @Service
 public class BookService {
-    public static final String IS_INVALID = "is invalid";
-    public static final String IS_MANDATORY = "is mandatory";
 
     @Autowired
     BookRepository bookRepository;
@@ -79,7 +77,7 @@ public class BookService {
                 }
                 return bookValue;
             }
-            default -> throw new ValidationException("Search Id " + searchId + " " + IS_INVALID);
+            default -> throw new ValidationException("Search Id " + searchId + " is invalid");
         }
     }
 

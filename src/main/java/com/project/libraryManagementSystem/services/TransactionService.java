@@ -5,10 +5,7 @@ import com.project.libraryManagementSystem.models.*;
 import com.project.libraryManagementSystem.repositories.TransactionRepository;
 import com.project.libraryManagementSystem.utils.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -39,7 +36,6 @@ public class TransactionService {
      * @return
      */
     public boolean initiateTransactionRequest(InitiateTransactionRequest request) throws ValidationException {
-        // request.getTransactionType() == TransactionType.ISSUE ?  issuance(request) : returnBook(request);
         if (request.getTransactionType() == TransactionType.ISSUE) {
             issuance(request);
         } else {
@@ -48,12 +44,6 @@ public class TransactionService {
         return true;
     }
 
-    /**
-     *
-     *
-     * @param request
-     * @return
-     */
     /**
      * Method to validate issuance book request.
      *
@@ -138,7 +128,7 @@ public class TransactionService {
         }
         Transaction issueTransaction = transactionRepository.findTopByStudentAndBookAndTransactionTypeOrderByIdDesc(student, book, TransactionType.ISSUE);
         if (issueTransaction == null) {
-            throw new ValidationException("Error occurred while processing the transaction, transaction failed.");
+            throw new ValidationException("The record does not exist for the books issued by the student." );
         }
         Transaction transaction = null;
         try {
